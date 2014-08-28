@@ -1,0 +1,23 @@
+HKCR
+{
+	COM.TestObject.1 = s 'TestObject Class'
+	{
+		CLSID = s '{90CAF4FC-042D-493C-BC54-4D4EE012B8A6}'
+	}
+	COM.TestObject = s 'TestObject Class'
+	{
+		CLSID = s '{90CAF4FC-042D-493C-BC54-4D4EE012B8A6}'
+		CurVer = s 'COM.TestObject.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {90CAF4FC-042D-493C-BC54-4D4EE012B8A6} = s 'TestObject Class'
+		{
+			ProgID = s 'COM.TestObject.1'
+			VersionIndependentProgID = s 'COM.TestObject'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			'TypeLib' = s '{46776A3A-2CEA-41FD-B0AC-C4BCD9FD4D05}'
+		}
+	}
+}

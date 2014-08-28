@@ -1,0 +1,37 @@
+// COMDLL.idl : IDL source for COMDLL
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (COMDLL.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(A3F5D53C-3DC6-430B-89D8-5BED54B67718),
+	dual,
+	nonextensible,
+	helpstring("IDLLTestObject Interface"),
+	pointer_default(unique)
+]
+interface IDLLTestObject : IDispatch{
+	HRESULT Test();
+};
+[
+	uuid(7B0B4D95-AF97-4D2A-8BA3-2CAABAA22E8A),
+	version(1.0),
+	helpstring("COMDLL 1.0 Type Library")
+]
+library COMDLLLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(A1A70915-98B9-429F-A985-353452C664CE),
+		helpstring("DLLTestObject Class")
+	]
+	coclass DLLTestObject
+	{
+		[default] interface IDLLTestObject;
+	};
+};

@@ -1,0 +1,26 @@
+HKCR
+{
+	COMDLL.TestObject.1 = s 'TestObject Class'
+	{
+		CLSID = s '{A1A70915-98B9-429F-A985-353452C664CE}'
+	}
+	COMDLL.TestObject = s 'TestObject Class'
+	{
+		CLSID = s '{A1A70915-98B9-429F-A985-353452C664CE}'
+		CurVer = s 'COMDLL.TestObject.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {A1A70915-98B9-429F-A985-353452C664CE} = s 'TestObject Class'
+		{
+			ProgID = s 'COMDLL.TestObject.1'
+			VersionIndependentProgID = s 'COMDLL.TestObject'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{7B0B4D95-AF97-4D2A-8BA3-2CAABAA22E8A}'
+		}
+	}
+}

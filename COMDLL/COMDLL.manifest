@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1"
+  manifestVersion="1.0">
+  <assemblyIdentity type="win32" name="ComDLL" version="1.0.0.0" />
+
+  <file name = "ComDLL.dll">
+    <comClass clsid="{A1A70915-98B9-429F-A985-353452C664CE}" threadingModel = "Apartment" />
+    <typelib tlbid="{7B0B4D95-AF97-4D2A-8BA3-2CAABAA22E8A}"  version="1.0" helpdir=""/>
+  </file>
+
+  <comInterfaceExternalProxyStub
+      name="IDLLTestObject"
+      iid="{A3F5D53C-3DC6-430B-89D8-5BED54B67718}"
+      proxyStubClsid32="{00020424-0000-0000-C000-000000000046}"
+      baseInterface="{00000000-0000-0000-C000-000000000046}"
+      tlbid = "{7B0B4D95-AF97-4D2A-8BA3-2CAABAA22E8A}" />
+</assembly>

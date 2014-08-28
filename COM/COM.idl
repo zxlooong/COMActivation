@@ -1,0 +1,38 @@
+// COM.idl : IDL source for COM
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (COM.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(55A791C0-8805-4577-9C82-541C52A1DC06),
+	dual,
+	nonextensible,
+	helpstring("ITestObject Interface"),
+	pointer_default(unique)
+]
+interface ITestObject : IDispatch
+{
+	HRESULT Test();
+};
+[
+	uuid(46776A3A-2CEA-41FD-B0AC-C4BCD9FD4D05),
+	version(1.0),
+	helpstring("COM 1.0 Type Library")
+]
+library COMLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(90CAF4FC-042D-493C-BC54-4D4EE012B8A6),
+		helpstring("TestObject Class")
+	]
+	coclass TestObject
+	{
+		[default] interface ITestObject;
+	};
+};
